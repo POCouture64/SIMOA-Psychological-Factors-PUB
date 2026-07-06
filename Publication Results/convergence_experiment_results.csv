@@ -1,0 +1,5 @@
+"maxit","max_psrf","mean_psrf","n_above_1.1","converged"
+10,1.2329,1.0272,10,FALSE
+20,1.1619,1.0169,2,FALSE
+30,1.0868,1.0113,0,TRUE
+40,1.0717,1.0086,0,TRUE
