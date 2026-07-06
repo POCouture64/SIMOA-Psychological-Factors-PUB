@@ -1,0 +1,14 @@
+Diagnostic,Model_A,Model_B
+Nagelkerke pseudo-R2 (manual mean),0.2029,0.3633
+HL chi-square,13.448,12.092
+HL p-value,0.0973,0.1472
+HL interpretation,Adequate,Adequate
+AUC (pooled predictions),0.754,0.825
+Optimal threshold (Youden),0.2894,0.3167
+Sensitivity,0.678,0.757
+Specificity,0.752,0.798
+PPV,0.506,0.584
+NPV,0.862,0.897
+Accuracy,0.732,0.787
+Box-Tidwell violations,I(DBAS_Medications * log(DBAS_Medications)),None
+Class imbalance ratio,2.67:1,2.67:1
