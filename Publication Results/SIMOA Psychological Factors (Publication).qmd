@@ -1,12 +1,31 @@
 ---
-title: "THESIS"
+title: "SIMOA Psychological Factors (Publication)"
 author: "PO Couture"
 format: html
 editor: visual
 ---
 
-## Thesis
+## SIMOA Psychological Factors (Publication)
 
+This document contains the complete, streamlined analysis pipeline for the SIMOA (Stopping Insomnia Medications in Older Adults) study of benzodiazepine receptor agonist (BZRA) discontinuation among community-dwelling older adults, focusing on the role of psychological individual differences alongside clinical and demographic predictors.
+
+**Outcome:** `stopped_bzra` — a binary indicator (stopped/rare use vs. continued regular use), derived from a 3-level self-reported frequency item (`freq_dich`).
+
+**Data:** Cross-sectional self-report survey data (`SIMOA Report.csv`), collected via REDCap. Eligibility was restricted to respondents aged 65+ who endorsed use of one of 14 specified BZRAs, had non-missing outcome data, and were Canadian residents.
+
+**Analytic approach**, in the order the sections below run:
+
+1.  **Eligibility & missingness** — sample derivation (CONSORT-style flow) and diagnostics for psychological individual differences-scale dropout (MCAR/MAR/MNAR assessment).
+2.  **Variable preparation** — coalescing survey-branching variables, computing BZRA daily diazepam-equivalent dose, recoding withdrawal/health variables, and reverse-scoring psychological individual differences items.
+3.  **Multiple imputation** — missingness diagnostics, statistically-derived imputation parameters (Von Hippel's m; Gelman-Rubin maxit), and the `mice()` run itself, with full convergence and distributional diagnostics.
+4.  **Subscale/composite construction** — BFI-10, SURPS, DBAS-16, and CISS psychological individual differences subscales, and COM-B behavioural composites, with reliability assessed via Cronbach's alpha (3+ item measures) or the Spearman-Brown coefficient (2-item measures).
+5.  **Descriptive statistics** — Table 1 (sample characteristics) and Table 2 (stopper vs. continuer comparisons), pooled across imputations via Rubin's rules with FDR correction.
+6.  **Variable selection** — VSURF (random-forest-based) selection run separately on a psychological individual differences-only predictor set and a full predictor set, each with majority-vote thresholding across imputations.
+7.  **Logistic regression** — Model A (psychological individual differences) and Model B (full), pooled coefficients, AUC, and DeLong's test comparing the two models, plus post-hoc diagnostics (Hosmer-Lemeshow, Box-Tidwell, confusion matrix).
+8.  **Validation & sensitivity** — 10-fold cross-validation, influential-case analysis (Cook's distance, leverage/residual decomposition), and a complete-case sensitivity analysis compared against the multiply-imputed results.
+9.  **Correlation matrix** — a mixed-measure association matrix (Spearman, rank-biserial, phi, eta-squared, Cramer's V as appropriate) across model variables and constructed scales, on the complete-case sample.
+
+**Outputs:** every generated table, figure, and intermediate `.rds` object is written to a sibling `Thesis Publication Outputs/` folder, keeping generated results separate from this source script.
 
 ## Load Data
 
@@ -23,9 +42,6 @@ output_dir <- file.path(dirname(getwd()), "Thesis Publication Outputs")
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 setwd(output_dir)
 ```
-
-
-
 
 ## Eligibility
 
@@ -133,8 +149,8 @@ write.csv(exclusion_summary, "sample_exclusion_flowchart.csv", row.names = FALSE
 cat("✓ Saved: sample_exclusion_flowchart.csv\n\n")
 ```
 
-
 ## Psychological Individual Differences Missingness
+
 ```{r}
 #==============================================================================
 # CHUNK 4: EARLY DROPOUT DIAGNOSTICS
@@ -486,11 +502,8 @@ cat("DROPOUT DIAGNOSTICS COMPLETE\n")
 cat("═══════════════════════════════════════════════════════════════\n\n")
 ```
 
-
-
-
-
 ## Variable Coalescing, Preparation, Selection
+
 ```{r}
 #==============================================================================
 # CHUNK 5+6: VARIABLE COALESCING, PREPARATION & SELECTION
@@ -1786,10 +1799,8 @@ cat(sprintf("Final dataset: %d obs x %d vars -> SIMOA_analysis.rds\n\n",
             nrow(SIMOA_analysis), ncol(SIMOA_analysis)))
 ```
 
-
-
-
 ## Pre-Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 7: PRE-IMPUTATION DIAGNOSTICS & OPTIMIZATION
@@ -3211,10 +3222,8 @@ cat("✓ PRE-IMPUTATION DIAGNOSTICS COMPLETE\n")
 cat("═══════════════════════════════════════════════════════════════\n\n")
 ```
 
-
-
-
 ## Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 8: MULTIPLE IMPUTATION
@@ -4230,10 +4239,8 @@ if (n_logged > 0)
 cat("\n")
 ```
 
-
-
-
 ## Post-Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 9: POST-IMPUTATION PROCESSING
@@ -5267,10 +5274,8 @@ cat("  4. imputed_example_with_subscales.csv\n")
 cat("     → Imputation 1 for visual inspection\n\n")
 ```
 
-
-
-
 ## Descriptive Stats
+
 ```{r}
 #==============================================================================
 # CHUNK 10: DESCRIPTIVE STATISTICS & GROUP COMPARISONS
@@ -6341,13 +6346,8 @@ cat("  Benjamini & Hochberg (1995). JRSS-B, 57(1), 289-300.\n")
 cat("  Cohen, J. (1988). Statistical Power Analysis (2nd ed.).\n\n")
 ```
 
-
-
-
-
-
-
 ## PERS VSURF
+
 ```{r}
 #==============================================================================
 # CHUNK 11A: VSURF VARIABLE SELECTION (PSYCHOLOGICAL INDIVIDUAL DIFFERENCES PREDICTORS)
@@ -6956,8 +6956,8 @@ cat("  Rubin, D.B. (1987). Multiple Imputation for Nonresponse in Surveys.\n")
 cat("  Cohen, J. (1988). Statistical Power Analysis (2nd ed.).\n\n")
 ```
 
-
 ## FULL VSURF
+
 ```{r}
 #==============================================================================
 # CHUNK 11B: VSURF VARIABLE SELECTION (ALL PREDICTORS — FULL MODEL)
@@ -7936,10 +7936,8 @@ ggsave("VSURF_full_importance_ALL.png", p1_full,
 cat("✓ Saved: VSURF_full_importance_ALL.png\n\n")
 ```
 
-
-
-
 ## LR
+
 ```{r}
 #==============================================================================
 # CHUNK 12: LOGISTIC REGRESSION — PSYCHOLOGICAL INDIVIDUAL DIFFERENCES vs FULL MODEL + DELONG'S TEST
@@ -8699,8 +8697,8 @@ cat("  Barnard & Rubin (1999). Biometrika, 86:948–955.\n\n")
 cat("✓ Ready for Chunk 13: reporting / visualisation\n\n")
 ```
 
-
 ## Additional tests
+
 ```{r}
 #==============================================================================
 # CHUNK 13: POST-LOGISTIC REGRESSION DIAGNOSTICS (MULTIPLY IMPUTED DATA)
@@ -9357,10 +9355,8 @@ cat("  Youden WJ (1950). Cancer, 3(1):32-35.\n\n")
 cat("✓ Ready for Chunk 14: influential cases analysis\n\n")
 ```
 
-
-
-
 ## Cross-Validation
+
 ```{r}
 #==============================================================================
 # CHUNK 13: 10-FOLD CROSS-VALIDATION — PSYCHOLOGICAL INDIVIDUAL DIFFERENCES vs FULL MODEL
@@ -9883,9 +9879,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 14: reporting / visualisation\n\n")
 ```
 
-
-
 ## Influential Case
+
 ```{r}
 #==============================================================================
 # CHUNK 14: INFLUENTIAL CASES ANALYSIS — MODEL A & MODEL B
@@ -11234,12 +11229,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 15\n\n")
 ```
 
-
-
-
-
-
 ## Subgroup Check
+
 ```{r}
 #==============================================================================
 # CHUNK 14b: PREDICTED PROBABILITY & INFLUENCE MECHANISM DIAGNOSTIC
@@ -12199,11 +12190,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 15\n\n")
 ```
 
-
-
-
-
 ## Complete Case Analysis
+
 ```{r}
 #==============================================================================
 # CHUNK 15: COMPLETE CASE SENSITIVITY ANALYSIS
@@ -13140,9 +13128,8 @@ cat("  White IR et al. (2011). Stat Med, 30(4), 377-399.\n\n")
 cat("✓ Ready for Chunk 16\n\n")
 ```
 
-
-
 ## Correlation Matrix
+
 ```{r}
 # ==============================================================================
 # CHUNK 16: COMPLETE CASE MIXED-MEASURE ASSOCIATION MATRIX
@@ -13939,25 +13926,3 @@ cat("  Richardson JTE (2011). Eta squared. Practical Assessment, 16(6).\n\n")
 
 cat("✓ Ready for Chunk 17\n\n")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
