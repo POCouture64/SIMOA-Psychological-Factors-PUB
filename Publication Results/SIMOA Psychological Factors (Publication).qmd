@@ -1,12 +1,11 @@
 ---
-title: "THESIS"
+title: "SIMOA Psychological Factors (Publication)"
 author: "PO Couture"
 format: html
 editor: visual
 ---
 
 ## Thesis
-
 
 ## Load Data
 
@@ -23,9 +22,6 @@ output_dir <- file.path(dirname(getwd()), "Thesis Publication Outputs")
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 setwd(output_dir)
 ```
-
-
-
 
 ## Eligibility
 
@@ -133,8 +129,8 @@ write.csv(exclusion_summary, "sample_exclusion_flowchart.csv", row.names = FALSE
 cat("✓ Saved: sample_exclusion_flowchart.csv\n\n")
 ```
 
-
 ## Personality Missingness
+
 ```{r}
 #==============================================================================
 # CHUNK 4: EARLY DROPOUT DIAGNOSTICS
@@ -487,11 +483,8 @@ cat("DROPOUT DIAGNOSTICS COMPLETE\n")
 cat("═══════════════════════════════════════════════════════════════\n\n")
 ```
 
-
-
-
-
 ## Variable Coalescing, Preparation, Selection
+
 ```{r}
 #==============================================================================
 # CHUNK 5+6: VARIABLE COALESCING, PREPARATION & SELECTION
@@ -1787,10 +1780,8 @@ cat(sprintf("Final dataset: %d obs x %d vars -> SIMOA_analysis.rds\n\n",
             nrow(SIMOA_analysis), ncol(SIMOA_analysis)))
 ```
 
-
-
-
 ## Pre-Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 7: PRE-IMPUTATION DIAGNOSTICS & OPTIMIZATION
@@ -3212,10 +3203,8 @@ cat("✓ PRE-IMPUTATION DIAGNOSTICS COMPLETE\n")
 cat("═══════════════════════════════════════════════════════════════\n\n")
 ```
 
-
-
-
 ## Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 8: MULTIPLE IMPUTATION
@@ -4231,10 +4220,8 @@ if (n_logged > 0)
 cat("\n")
 ```
 
-
-
-
 ## Post-Imputation
+
 ```{r}
 #==============================================================================
 # CHUNK 9: POST-IMPUTATION PROCESSING
@@ -5267,10 +5254,8 @@ cat("  4. imputed_example_with_subscales.csv\n")
 cat("     → Imputation 1 for visual inspection\n\n")
 ```
 
-
-
-
 ## Descriptive Stats
+
 ```{r}
 #==============================================================================
 # CHUNK 10: DESCRIPTIVE STATISTICS & GROUP COMPARISONS
@@ -6341,13 +6326,8 @@ cat("  Benjamini & Hochberg (1995). JRSS-B, 57(1), 289-300.\n")
 cat("  Cohen, J. (1988). Statistical Power Analysis (2nd ed.).\n\n")
 ```
 
-
-
-
-
-
-
 ## PERS VSURF
+
 ```{r}
 #==============================================================================
 # CHUNK 11A: VSURF VARIABLE SELECTION (PERSONALITY PREDICTORS)
@@ -6956,8 +6936,8 @@ cat("  Rubin, D.B. (1987). Multiple Imputation for Nonresponse in Surveys.\n")
 cat("  Cohen, J. (1988). Statistical Power Analysis (2nd ed.).\n\n")
 ```
 
-
 ## FULL VSURF
+
 ```{r}
 #==============================================================================
 # CHUNK 11B: VSURF VARIABLE SELECTION (ALL PREDICTORS — FULL MODEL)
@@ -7936,10 +7916,8 @@ ggsave("VSURF_full_importance_ALL.png", p1_full,
 cat("✓ Saved: VSURF_full_importance_ALL.png\n\n")
 ```
 
-
-
-
 ## LR
+
 ```{r}
 #==============================================================================
 # CHUNK 12: LOGISTIC REGRESSION — PERSONALITY vs FULL MODEL + DELONG'S TEST
@@ -8699,8 +8677,8 @@ cat("  Barnard & Rubin (1999). Biometrika, 86:948–955.\n\n")
 cat("✓ Ready for Chunk 13: reporting / visualisation\n\n")
 ```
 
-
 ## Additional tests
+
 ```{r}
 #==============================================================================
 # CHUNK 13: POST-LOGISTIC REGRESSION DIAGNOSTICS (MULTIPLY IMPUTED DATA)
@@ -9357,10 +9335,8 @@ cat("  Youden WJ (1950). Cancer, 3(1):32-35.\n\n")
 cat("✓ Ready for Chunk 14: influential cases analysis\n\n")
 ```
 
-
-
-
 ## Cross-Validation
+
 ```{r}
 #==============================================================================
 # CHUNK 13: 10-FOLD CROSS-VALIDATION — PERSONALITY vs FULL MODEL
@@ -9883,9 +9859,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 14: reporting / visualisation\n\n")
 ```
 
-
-
 ## Influential Case
+
 ```{r}
 #==============================================================================
 # CHUNK 14: INFLUENTIAL CASES ANALYSIS — MODEL A & MODEL B
@@ -11234,12 +11209,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 15\n\n")
 ```
 
-
-
-
-
-
 ## Subgroup Check
+
 ```{r}
 #==============================================================================
 # CHUNK 14b: PREDICTED PROBABILITY & INFLUENCE MECHANISM DIAGNOSTIC
@@ -12151,11 +12122,8 @@ cat("  Rubin DB (1987). Multiple Imputation for Nonresponse in Surveys.\n\n")
 cat("✓ Ready for Chunk 15\n\n")
 ```
 
-
-
-
-
 ## Complete Case Analysis
+
 ```{r}
 #==============================================================================
 # CHUNK 15: COMPLETE CASE SENSITIVITY ANALYSIS
@@ -13092,9 +13060,8 @@ cat("  White IR et al. (2011). Stat Med, 30(4), 377-399.\n\n")
 cat("✓ Ready for Chunk 16\n\n")
 ```
 
-
-
 ## Correlation Matrix
+
 ```{r}
 # ==============================================================================
 # CHUNK 16: COMPLETE CASE MIXED-MEASURE ASSOCIATION MATRIX
@@ -13891,25 +13858,3 @@ cat("  Richardson JTE (2011). Eta squared. Practical Assessment, 16(6).\n\n")
 
 cat("✓ Ready for Chunk 17\n\n")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
