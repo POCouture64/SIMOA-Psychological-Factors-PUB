@@ -1,0 +1,10 @@
+Term,Estimate,SE,z_value,p_value,Significant_Bonferroni,Interpretation
+I(capabilityC * log(capabilityC)),1.3417,0.7333,1.83,0.0673,FALSE,✓ Linear assumption met
+I(DBAS_Medications * log(DBAS_Medications)),0.6163,0.3621,1.702,0.0887,FALSE,✓ Linear assumption met
+I(side_effectsC * log(side_effectsC)),2.5147,1.0538,2.386,0.017,FALSE,✓ Linear assumption met
+I(c_lengthofuse * log(c_lengthofuse)),0.052,0.0361,1.439,0.1502,FALSE,✓ Linear assumption met
+I(bzra_daily_diazepam_eq * log(bzra_daily_diazepam_eq)),-0.2123,0.148,-1.435,0.1514,FALSE,✓ Linear assumption met
+I(dependenceC * log(dependenceC)),-0.0453,0.8009,-0.057,0.9549,FALSE,✓ Linear assumption met
+I(n_sleep_conditions * log(n_sleep_conditions)),1.0323,1.1171,0.924,0.3554,FALSE,✓ Linear assumption met
+I(wdl_symptom_count * log(wdl_symptom_count)),0.0663,1.0798,0.061,0.951,FALSE,✓ Linear assumption met
+I(adlsC * log(adlsC)),-1.6863,0.7109,-2.372,0.0177,FALSE,✓ Linear assumption met
