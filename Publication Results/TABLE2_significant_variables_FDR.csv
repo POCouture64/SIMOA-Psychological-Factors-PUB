@@ -1,0 +1,10 @@
+"variable","Family","p_val","effect_type","effect_size","ci_low","ci_high","interpretation","p_fdr"
+"capabilityC","Beliefs_COMB",5.22821661953354e-17,"Cohens_d",0.999,0.775,1.224,"Large",4.18257329562683e-16
+"DBAS_Medications","Psychological_Individual_Differences",1.12254309637479e-09,"Cohens_d",-0.846,-1.068,-0.624,"Large",1.79606895419966e-08
+"dependenceC","Beliefs_COMB",1.18046602058856e-05,"Cohens_d",-0.53,-0.747,-0.312,"Medium",4.72186408235424e-05
+"adlsC","Beliefs_COMB",0.000449561692866668,"Cohens_d",0.47,0.254,0.687,"Small",0.00119883118097778
+"motivationC","Beliefs_COMB",0.000736942722629709,"Cohens_d",-0.374,-0.59,-0.158,"Small",0.00147388544525942
+"stop_wdl_exp_combined","Sleep_Adverse",0.000455833409233117,"Cramers_V",0.191,0.099,0.283,"Small",0.0027350004553987
+"wdl_symptom_count","Sleep_Adverse",0.00114108053116946,"Cohens_d",-0.368,-0.584,-0.153,"Small",0.00342324159350837
+"c_lengthofuse","Clinical",0.000342683732828623,"Cohens_d",-0.37,-0.586,-0.155,"Small",0.00411220479394348
+"side_effectsC","Beliefs_COMB",0.00356371845801373,"Cohens_d",0.378,0.162,0.594,"Small",0.00570194953282196
