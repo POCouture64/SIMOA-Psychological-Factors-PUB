@@ -1,0 +1,3 @@
+Model,N_Influential,Pct_Influential,Pct_Discontinued,Scenario,Robust_Predictors
+Model A (Psychological Individual Differences),23,5.5%,95.7%,SCENARIO 2: Heterogeneous / partial profile (25-74% predictors flagged),1 / 7
+Model B (Full),31,7.3%,74.2%,SCENARIO 1: Coherent clinical subgroup (>= 75% predictors flagged),2 / 10
