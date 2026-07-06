@@ -4892,20 +4892,22 @@ for (fam in names(reliability_families)) {
 }
 
 # Reliability summary table
-rel_table <- do.call(rbind, lapply(names(reliability_list), function(s) {
+safe_num <- function(x) if (is.null(x) || length(x) != 1) NA_real_ else as.numeric(x)
+
+rel_table <- dplyr::bind_rows(lapply(names(reliability_list), function(s) {
   r <- reliability_list[[s]]
   data.frame(
     subscale       = s,
     n_items        = length(reliability_defs[[s]]$items),
     n_reversed     = length(reliability_defs[[s]]$reversed),
-    method         = r$method,
-    alpha          = round(r$alpha,          3),
-    alpha_ci_lower = round(r$alpha_ci_lower, 3),
-    alpha_ci_upper = round(r$alpha_ci_upper, 3),
-    mean_inter_r   = round(r$mean_r,         3),
-    mean           = round(r$mean,           2),
-    sd             = round(r$sd,             2),
-    status         = r$status,
+    method         = if (is.null(r$method) || length(r$method) != 1) NA_character_ else as.character(r$method),
+    alpha          = round(safe_num(r$alpha),          3),
+    alpha_ci_lower = round(safe_num(r$alpha_ci_lower), 3),
+    alpha_ci_upper = round(safe_num(r$alpha_ci_upper), 3),
+    mean_inter_r   = round(safe_num(r$mean_r),         3),
+    mean           = round(safe_num(r$mean),           2),
+    sd             = round(safe_num(r$sd),             2),
+    status         = if (is.null(r$status) || length(r$status) != 1) NA_character_ else as.character(r$status),
     stringsAsFactors = FALSE
   )
 }))
@@ -5273,6 +5275,7 @@ cat("     → Subscale/composite definitions + reliability results\n")
 cat("  4. imputed_example_with_subscales.csv\n")
 cat("     → Imputation 1 for visual inspection\n\n")
 ```
+
 
 ## Descriptive Stats
 
@@ -7319,25 +7322,14 @@ cat(sprintf("Beliefs/COM-B  (%2d): %s\n",
             sum(all_vars %in% beliefs_comob),
             paste(all_vars[all_vars %in% beliefs_comob], collapse = ", ")))
 cat(sprintf("Psychological Individual Differences    (%2d): %s\n",
-            sum(all_vars %in% psychological individual differences),
-            paste(all_vars[all_vars %in% psychological individual differences], collapse = ", ")))
+            sum(all_vars %in% personality),
+            paste(all_vars[all_vars %in% personality], collapse = ", ")))
 cat(sprintf("\nTotal candidate predictors (after availability check): %d\n",
             length(all_vars)))
 cat("DBAS_Total excluded (collinear with subscales)\n")
 cat("stop_wdl_exp_combined included (3-level unordered factor — consistent with Chunk 10)\n")
 cat("wdl_symptom_count included (continuous withdrawal symptom count)\n")
 cat("bzra_daily_diazepam_eq used\n\n")
-
-missing_vars <- all_vars_declared[!all_vars_declared %in% names(d1)]
-if (length(missing_vars) > 0) {
-  cat(sprintf("⚠️  %d declared variables not found in data (excluded):\n",
-              length(missing_vars)))
-  for (v in missing_vars) cat("  •", v, "\n")
-  cat("\n")
-} else {
-  cat(sprintf("✓ All %d declared variables confirmed in imputed data\n\n",
-              length(all_vars_declared)))
-}
 
 #------------------------------------------------------------------------------
 # CATEGORICAL vs CONTINUOUS VARIABLE LISTS — aligned with Chunk 10
