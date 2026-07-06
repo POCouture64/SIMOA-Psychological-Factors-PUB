@@ -1,0 +1,3 @@
+Model,Description,N_MI,N_CC,MI_AUC,CC_AUC,AUC_Diff
+Model A,Psychological Individual Differences interpretation set,422,344,"0.738 [0.680, 0.794]","0.743 [0.680, 0.806]",0.005
+Model B,Full interpretation set,422,344,"0.817 [0.767, 0.863]","0.823 [0.761, 0.875]",0.006

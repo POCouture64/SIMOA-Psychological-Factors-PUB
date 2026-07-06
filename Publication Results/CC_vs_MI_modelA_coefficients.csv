@@ -1,0 +1,8 @@
+term,MI_OR_CI,MI_sig,CC_OR_CI,CC_sig,OR_change_pct,Direction,Sig_consistency
+DBAS_Medications,"0.63 [0.54, 0.74]",***,"0.62 [0.52, 0.72]",***,-2,CC lower,Both significant
+SURPS_Hopelessness,"0.60 [0.32, 1.13]",,"0.60 [0.30, 1.17]",,0.9,CC higher,Both non-significant
+CISS_Emotion,"0.84 [0.57, 1.24]",,"0.79 [0.53, 1.18]",,-5.4,CC lower,Both non-significant
+DBAS_Consequences,"1.08 [0.92, 1.25]",,"1.12 [0.96, 1.31]",,3.8,CC higher,Both non-significant
+BFI_Conscientiousness,"0.84 [0.61, 1.17]",,"0.79 [0.56, 1.10]",,-6.6,CC lower,Both non-significant
+BFI_Neuroticism,"1.04 [0.77, 1.40]",,"1.02 [0.75, 1.40]",,-1.7,CC lower,Both non-significant
+SURPS_Sensation_Seeking,"1.52 [0.89, 2.58]",,"1.47 [0.86, 2.51]",,-3.3,CC lower,Both non-significant

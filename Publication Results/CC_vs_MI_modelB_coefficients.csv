@@ -1,0 +1,12 @@
+term,MI_OR_CI,MI_sig,CC_OR_CI,CC_sig,OR_change_pct,Direction,Sig_consistency
+capabilityC,"2.63 [1.81, 3.81]",***,"2.97 [2.04, 4.44]",***,13,CC higher,Both significant
+DBAS_Medications,"0.75 [0.64, 0.87]",***,"0.74 [0.63, 0.87]",***,-0.4,CC lower,Both significant
+side_effectsC,"1.45 [0.86, 2.42]",,"1.53 [0.88, 2.70]",,5.8,CC higher,Both non-significant
+c_lengthofuse,"0.98 [0.95, 1.01]",,"0.97 [0.94, 1.01]",,-0.8,CC lower,Both non-significant
+bzra_daily_diazepam_eq,"1.18 [0.98, 1.41]",.,"1.23 [1.00, 1.49]",*,4,CC higher,Gained significance in CC
+dependenceC,"1.20 [0.80, 1.80]",,"1.36 [0.92, 2.04]",,13.2,CC higher,Both non-significant
+n_sleep_conditions,"0.84 [0.56, 1.24]",,"0.84 [0.54, 1.29]",,0.1,CC higher,Both non-significant
+wdl_symptom_count,"0.73 [0.39, 1.36]",,"0.96 [0.43, 2.05]",,32,CC higher,Both non-significant
+stop_wdl_exp_combinedInsomnia only,"1.08 [0.45, 2.63]",,"1.07 [0.38, 3.12]",,-1.5,CC lower,Both non-significant
+stop_wdl_exp_combinedOther withdrawal symptoms,"1.19 [0.27, 5.28]",,"0.55 [0.08, 3.91]",,-53.6,CC lower,Both non-significant
+adlsC,"1.37 [0.89, 2.13]",,"1.24 [0.78, 1.99]",,-9.3,CC lower,Both non-significant

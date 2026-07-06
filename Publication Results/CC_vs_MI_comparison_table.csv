@@ -1,0 +1,19 @@
+Model,Predictor,MI OR [95% CI],MI p,CC OR [95% CI],CC p,OR Δ (%),Consistency
+Model A — Psychological Individual Differences,DBAS_Medications,"0.63 [0.54, 0.74]",***,"0.62 [0.52, 0.72]",***,-2,Both significant
+Model A — Psychological Individual Differences,SURPS_Hopelessness,"0.60 [0.32, 1.13]",,"0.60 [0.30, 1.17]",,0.9,Both non-significant
+Model A — Psychological Individual Differences,CISS_Emotion,"0.84 [0.57, 1.24]",,"0.79 [0.53, 1.18]",,-5.4,Both non-significant
+Model A — Psychological Individual Differences,DBAS_Consequences,"1.08 [0.92, 1.25]",,"1.12 [0.96, 1.31]",,3.8,Both non-significant
+Model A — Psychological Individual Differences,BFI_Conscientiousness,"0.84 [0.61, 1.17]",,"0.79 [0.56, 1.10]",,-6.6,Both non-significant
+Model A — Psychological Individual Differences,BFI_Neuroticism,"1.04 [0.77, 1.40]",,"1.02 [0.75, 1.40]",,-1.7,Both non-significant
+Model A — Psychological Individual Differences,SURPS_Sensation_Seeking,"1.52 [0.89, 2.58]",,"1.47 [0.86, 2.51]",,-3.3,Both non-significant
+Model B — Full,capabilityC,"2.63 [1.81, 3.81]",***,"2.97 [2.04, 4.44]",***,13,Both significant
+Model B — Full,DBAS_Medications,"0.75 [0.64, 0.87]",***,"0.74 [0.63, 0.87]",***,-0.4,Both significant
+Model B — Full,side_effectsC,"1.45 [0.86, 2.42]",,"1.53 [0.88, 2.70]",,5.8,Both non-significant
+Model B — Full,c_lengthofuse,"0.98 [0.95, 1.01]",,"0.97 [0.94, 1.01]",,-0.8,Both non-significant
+Model B — Full,bzra_daily_diazepam_eq,"1.18 [0.98, 1.41]",.,"1.23 [1.00, 1.49]",*,4,Gained significance in CC
+Model B — Full,dependenceC,"1.20 [0.80, 1.80]",,"1.36 [0.92, 2.04]",,13.2,Both non-significant
+Model B — Full,n_sleep_conditions,"0.84 [0.56, 1.24]",,"0.84 [0.54, 1.29]",,0.1,Both non-significant
+Model B — Full,wdl_symptom_count,"0.73 [0.39, 1.36]",,"0.96 [0.43, 2.05]",,32,Both non-significant
+Model B — Full,stop_wdl_exp_combinedInsomnia only,"1.08 [0.45, 2.63]",,"1.07 [0.38, 3.12]",,-1.5,Both non-significant
+Model B — Full,stop_wdl_exp_combinedOther withdrawal symptoms,"1.19 [0.27, 5.28]",,"0.55 [0.08, 3.91]",,-53.6,Both non-significant
+Model B — Full,adlsC,"1.37 [0.89, 2.13]",,"1.24 [0.78, 1.99]",,-9.3,Both non-significant
